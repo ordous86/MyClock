@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clockViewModel"
+            type="com.lucian.myclock.ClockViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="?android:listPreferredItemPaddingStart"
+        tools:context=".ClockActivity">
+
+        <TextView
+            android:id="@+id/text_view_year"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_view_height"
+            android:gravity="center"
+            android:text="@string/text_view_year"
+            android:textColor="@android:color/white"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/text_view_year_value"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/text_view_year_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{clockViewModel.yearValue}"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/text_view_year"
+            app:layout_constraintRight_toLeftOf="@id/text_view_month"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/text_view_year"/>
+
+        <TextView
+            android:id="@+id/text_view_month"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_view_height"
+            android:gravity="center"
+            android:text="@string/text_view_month"
+            android:textColor="@android:color/white"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/text_view_year_value"
+            app:layout_constraintRight_toLeftOf="@id/text_view_month_value"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/text_view_month_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{clockViewModel.monthValue}"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/text_view_month"
+            app:layout_constraintRight_toLeftOf="@id/text_view_day"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/text_view_month"/>
+
+        <TextView
+            android:id="@+id/text_view_day"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_view_height"
+            android:gravity="center"
+            android:text="@string/text_view_day"
+            android:textColor="@android:color/white"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/text_view_month_value"
+            app:layout_constraintRight_toLeftOf="@id/text_view_day_value"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/text_view_day_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{clockViewModel.dayValue}"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/text_view_day"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/text_view_day"/>
+
+        <TextView
+            android:id="@+id/text_view_hour"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_view_height"
+            android:layout_marginTop="?android:listPreferredItemPaddingStart"
+            android:gravity="center"
+            android:text="@string/text_view_hour"
+            android:textColor="@android:color/white"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/text_view_hour_value"
+            app:layout_constraintTop_toBottomOf="@id/text_view_year"/>
+
+        <TextView
+            android:id="@+id/text_view_hour_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{clockViewModel.hourValue}"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/text_view_hour"
+            app:layout_constraintRight_toLeftOf="@id/text_view_minute"
+            app:layout_constraintTop_toBottomOf="@id/text_view_year"
+            app:layout_constraintBaseline_toBaselineOf="@id/text_view_hour"/>
+
+        <TextView
+            android:id="@+id/text_view_minute"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_view_height"
+            android:layout_marginTop="?android:listPreferredItemPaddingStart"
+            android:gravity="center"
+            android:text="@string/text_view_minute"
+            android:textColor="@android:color/white"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/text_view_hour_value"
+            app:layout_constraintRight_toLeftOf="@id/text_view_minute_value"
+            app:layout_constraintTop_toBottomOf="@id/text_view_month"/>
+
+        <TextView
+            android:id="@+id/text_view_minute_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{clockViewModel.minuteValue}"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/text_view_minute"
+            app:layout_constraintRight_toLeftOf="@id/text_view_second"
+            app:layout_constraintTop_toBottomOf="@id/text_view_month"
+            app:layout_constraintBaseline_toBaselineOf="@id/text_view_minute"/>
+
+        <TextView
+            android:id="@+id/text_view_second"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_view_height"
+            android:layout_marginTop="?android:listPreferredItemPaddingStart"
+            android:gravity="center"
+            android:text="@string/text_view_second"
+            android:textColor="@android:color/white"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/text_view_minute_value"
+            app:layout_constraintRight_toLeftOf="@id/text_view_second_value"
+            app:layout_constraintTop_toBottomOf="@id/text_view_day"/>
+
+        <TextView
+            android:id="@+id/text_view_second_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{clockViewModel.secondValue}"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/text_view_second"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_day"
+            app:layout_constraintBaseline_toBaselineOf="@id/text_view_second"/>
+
+        <Button
+            android:id="@+id/btn_switch_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="?android:listPreferredItemPaddingStart"
+            android:layout_marginEnd="?android:listPreferredItemPaddingEnd"
+            android:text="@{clockViewModel.switchYearBtnName}"
+            android:onClick="@{clockViewModel::onSwitchYearUnit}"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_switch_hour"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_switch_hour"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="?android:listPreferredItemPaddingStart"
+            android:layout_marginEnd="?android:listPreferredItemPaddingEnd"
+            android:text="@{clockViewModel.switchHourBtnName}"
+            android:onClick="@{clockViewModel::onSwitchHourUnit}"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/btn_switch_year"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

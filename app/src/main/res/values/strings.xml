@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TestClock</string>
+    <string name="text_view_day">Day</string>
+    <string name="text_view_hour">Hour</string>
+    <string name="text_view_minute">Minute</string>
+    <string name="text_view_month">Month</string>
+    <string name="text_view_second">Second</string>
+    <string name="text_view_year">Year</string>
+</resources>
