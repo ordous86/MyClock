@@ -34,7 +34,15 @@ class ClockRepository
     {
         val hour = when(this.hourUnit)
         {
-            UNIT_HOUR_12 -> Calendar.getInstance().get(Calendar.HOUR).toString() + if(Calendar.getInstance().get(Calendar.AM_PM) == 0) "AM" else "PM"
+            UNIT_HOUR_12 -> Calendar.getInstance().get(Calendar.HOUR).let {
+                if (it == 0)
+                    "12"
+                else
+                    it.toString()
+            } + if(Calendar.getInstance().get(Calendar.AM_PM) == 0)
+                    "AM"
+                else
+                    "PM"
             UNIT_HOUR_24 -> Calendar.getInstance().get(Calendar.HOUR_OF_DAY).toString()
             else -> throw IllegalArgumentException("Invalid hour unit")
         }
@@ -89,7 +97,15 @@ class ClockRepository
             UNIT_HOUR_24 ->
             {
                 this.hourUnit = UNIT_HOUR_12
-                hour = Calendar.getInstance().get(Calendar.HOUR).toString() + if(Calendar.getInstance().get(Calendar.AM_PM) == 0) "AM" else "PM"
+                hour = Calendar.getInstance().get(Calendar.HOUR).let {
+                    if (it == 0)
+                        "12"
+                    else
+                        it.toString()
+                } + if(Calendar.getInstance().get(Calendar.AM_PM) == 0)
+                        "AM"
+                    else
+                        "PM"
             }
             else -> throw IllegalArgumentException("Invalid hour unit")
         }

@@ -1,6 +1,5 @@
 package com.lucian.myclock
 
-import android.view.View
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 
@@ -69,11 +68,11 @@ class ClockViewModel(private val repository: ClockRepository): ViewModel()
 
 
     // Called to switch hour unit.
-    fun onSwitchHourUnit(view: View) = this.repository.switchHourUnit(::onHourUnitChanged)
+    fun onSwitchHourUnit() = this.repository.switchHourUnit(::onHourUnitChanged)
 
 
     // Called to switch year unit.
-    fun onSwitchYearUnit(view: View) = this.repository.switchYearUnit(::onYearUnitChanged)
+    fun onSwitchYearUnit() = this.repository.switchYearUnit(::onYearUnitChanged)
 
 
     // Called when year is loaded.

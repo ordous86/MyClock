@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TestClock</string>
+    <string name="app_name">Honest Clock</string>
     <string name="text_view_day">Day</string>
     <string name="text_view_hour">Hour</string>
     <string name="text_view_minute">Minute</string>
