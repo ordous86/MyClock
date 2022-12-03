@@ -23,19 +23,25 @@ jobs:
     - name: Envinfo
       run: npx envinfo
   
-    - name: Build application
-      run: |
-        yarn install && cd android && chmod +x gradlew && ./gradlew build bundleRelease 
-        du -shc `find . -regex '.+\.\(apk\|aab\)$'`
-      
+    - name: Setup gradle
+      uses: gradle/gradle-build-action@v2
+      with:
+        cache-read-only: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/develop' }}
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Run Compile
+      run: ./gradlew assembleRelease
+
     - name: Upload apk
       uses: actions/upload-artifact@v2
       with:
           name: app-release.apk
-          path: android/app/build/outputs/apk/release/
+          path: app/build/outputs/apk/release/
   
     - name: Upload aab
       uses: actions/upload-artifact@v2
       with:
           name: app-release.aab
-          path: android/app/build/outputs/bundle/release/
+          path: app/build/outputs/bundle/release/
