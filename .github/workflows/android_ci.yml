@@ -17,4 +17,4 @@ jobs:
     - name: Envinfo
       run: npx envinfo
     - name: Build application
-      run: yarn install && cd android && chmod +x gradlew && ./gradlew assembleRelease
+      run: yarn install && cd MyClock && chmod +x gradlew && ./gradlew assembleRelease
