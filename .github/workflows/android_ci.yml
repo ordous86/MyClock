@@ -31,17 +31,20 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Run Compile
-      run: ./gradlew assembleRelease
+    - name: Compile apk
+      run: ./gradlew assembleDebug
 
     - name: Upload apk
       uses: actions/upload-artifact@v2
       with:
-          name: app-release.apk
-          path: app/build/outputs/apk/release/
-  
+          name: app-debug.apk
+          path: app/build/outputs/apk/debug/
+
+    - name: Compile aab
+      run: ./gradlew bundleDebug
+
     - name: Upload aab
       uses: actions/upload-artifact@v2
       with:
-          name: app-release.aab
-          path: app/build/outputs/bundle/release/
+          name: app-debug.aab
+          path: app/build/outputs/bundle/debug/
