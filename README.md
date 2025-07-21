@@ -6,4 +6,4 @@ We claim that our app DO NOT do the following things.
 1. Collect user's private data.
 2. Share user's private data with others.
 
-Thers's no privacy concern while using. Enjot it!
+Theres's no privacy concern while using. Enjoy it!
