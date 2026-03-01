@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">誠實鐘</string>
+    <string name="text_view_day">日</string>
+    <string name="text_view_hour">時</string>
+    <string name="text_view_minute">分</string>
+    <string name="text_view_month">月</string>
+    <string name="text_view_second">秒</string>
+    <string name="text_view_year">年</string>
+</resources>
